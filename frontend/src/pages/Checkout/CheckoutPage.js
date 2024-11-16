@@ -70,7 +70,7 @@ export default function CheckoutPage() {
           <div className={classes.buttons}>
             <Button
               type="submit"
-              text="Go To Payment"
+              text="Send to Chef"
               width="100%"
               height="3rem"
             />

@@ -3,14 +3,22 @@ dotenv.config();
 import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
-import foodRouter from './routers/food.router.js';
-import userRouter from './routers/user.router.js';
-import orderRouter from './routers/order.router.js';
-import uploadRouter from './routers/upload.router.js';
+import {dbconnectpostgress} from './config/database.postgres.config.js';
+//import { dbconnect } from './config/database.config.js';
+// import foodRouter from './routers/food.router.js';
+// import userRouter from './routers/user.router.js';
+// import orderRouter from './routers/order.router.js';
+// import uploadRouter from './routers/upload.router.js';
+import foodRouter from './routers/food.postgres.router.js'
+import userRouter from './routers/user.postgres.router.js'
+import orderRouter from './routers/order.postgres.router.js'
+import uploadRouter from './routers/upload.postgres.router.js'
 
-import { dbconnect } from './config/database.config.js';
+
+
 import path, { dirname } from 'path';
-dbconnect();
+dbconnectpostgress();
+//dbconnect();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
